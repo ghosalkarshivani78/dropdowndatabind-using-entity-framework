@@ -1,0 +1,39 @@
+﻿@model MvcEnity.Models.userform
+@{
+    ViewBag.Title = "Edit";
+}
+  @using (Html.BeginForm("Edit", "user", FormMethod.Post))
+  {
+<h2>@ViewBag.Message</h2><div class="container">
+<div class="col-md-6">
+<form action="@Url.Action("Edit", "user")" method="post">
+  <div class="form-group">
+    <label>First Name</label>
+    @Html.TextBoxFor(x => x.firstname)
+  </div>
+  <div class="form-group">
+    <label>Lastt Name</label>
+      @Html.TextBoxFor(x => x.lastname)
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+      @Html.TextBoxFor(x => x.email)
+  </div>
+    <div class="form-group">
+    <label>Address</label>
+      @Html.TextBoxFor(x => x.address)
+  </div>
+   <div class="form-group">
+    <label>City</label>
+     @Html.DropDownListFor(x => Model.cityid, Model.cities, "select city", new { @class = "form-control" })
+  </div>
+   <div class="form-group">
+    <label>Number</label>
+      @Html.TextBoxFor(x => x.number)
+  </div>
+  
+  <input type="submit" value="Update" class="btn btn-primary"/>
+</form>
+</div>
+</div>
+  }

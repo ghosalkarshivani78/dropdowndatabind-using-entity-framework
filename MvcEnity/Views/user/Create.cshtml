@@ -1,0 +1,46 @@
+﻿@model MvcEnity.Models.userform
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container mt-3">
+<div class="col-md-6">
+<form action="@Url.Action("Create", "user")" method="post">
+  <div class="form-group">
+    <label>First Name</label>
+    @Html.TextBoxFor(x => x.firstname)
+    @Html.ValidationMessageFor(x => x.firstname)
+  </div>
+  <div class="form-group">
+    <label>Lastt Name</label>
+      @Html.TextBoxFor(x => x.lastname)
+      @Html.ValidationMessageFor(x => x.lastname)
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+      @Html.TextBoxFor(x => x.email)
+      @Html.ValidationMessageFor(x => x.email)
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+      @Html.TextBoxFor(x => x.address)
+      @Html.ValidationMessageFor(x => x.address)
+  </div>
+   <div class="form-group">
+    <label>City</label>
+  @Html.DropDownListFor(x => x.cityid, Model.cities,"Select City", new { @class = "form-control" })
+  @Html.ValidationMessageFor(x => x.cityid)
+  </div>
+   <div class="form-group">
+    <label>Number</label>
+      @Html.TextBoxFor(x => x.number)
+      @Html.ValidationMessageFor(x => x.number)
+  </div>
+  
+  <input type="submit" value="Insert" class="btn btn-primary"/>
+</form>
+<label style="color:red;"> @ViewBag.Message</label>
+</div>
+</div>
+
+

@@ -1,0 +1,4 @@
+C:\Users\octashop\Documents\Visual Studio 2010\Projects\MvcEnity\MvcEnity\bin\MvcEnity.dll
+C:\Users\octashop\Documents\Visual Studio 2010\Projects\MvcEnity\MvcEnity\bin\MvcEnity.pdb
+C:\Users\octashop\Documents\Visual Studio 2010\Projects\MvcEnity\MvcEnity\obj\Debug\MvcEnity.dll
+C:\Users\octashop\Documents\Visual Studio 2010\Projects\MvcEnity\MvcEnity\obj\Debug\MvcEnity.pdb

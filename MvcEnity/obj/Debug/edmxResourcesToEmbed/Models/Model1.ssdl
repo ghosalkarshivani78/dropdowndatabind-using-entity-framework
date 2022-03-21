@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="test2Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="test2ModelStoreContainer">
+    <EntitySet Name="city" EntityType="test2Model.Store.city" store:Type="Tables" Schema="test2" />
+    <EntitySet Name="users" EntityType="test2Model.Store.users" store:Type="Tables" Schema="test2" />
+    <AssociationSet Name="users_ibfk_1" Association="test2Model.Store.users_ibfk_1">
+      <End Role="city" EntitySet="city" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="city">
+    <Key>
+      <PropertyRef Name="cityid" />
+    </Key>
+    <Property Name="cityid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cityname" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="lastname" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="address" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="cityid" Type="int" Nullable="false" />
+    <Property Name="number" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <Association Name="users_ibfk_1">
+    <End Role="city" Type="test2Model.Store.city" Multiplicity="1" />
+    <End Role="users" Type="test2Model.Store.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="city">
+        <PropertyRef Name="cityid" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="cityid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
